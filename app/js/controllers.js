@@ -42,7 +42,10 @@ var  QuestionsCtrl = [
 			//这里后续需要对参数进行判断处理
 			//....
 			$http.get("http://localhost:8080/NCRE/question/index?id="+ quesPageId ).success(function(data){
-				$scope.questions = data;
+				$scope.questions = data.list;
+				$scope.pageSize = data.pageSize;
+				$scope.pageNumber = data.pageNumber;
+				$scope.totalPage = data.totalPage;
 			});
 		}
 ];
@@ -71,8 +74,11 @@ var AnnouncementsCtrl = [
 			var annoPageId = $routeParams.annoPageId;
 			//这里后续需要对参数进行判断处理
 			//....
-			$http.get("http://localhost:8080/NCRE/announcement/index?id="+ annoPageId ).success(function(data){
-				$scope.announcements = data;
+			$http.get("http://localhost:8080/NCRE/announcement/index?page="+ annoPageId ).success(function(data){
+				$scope.announcements = data.list;
+				$scope.pageSize = data.pageSize;
+				$scope.pageNumber = data.pageNumber;
+				$scope.totalPage = data.totalPage;
 			});
 		}
 ];
@@ -110,7 +116,7 @@ var DownloadsDocCtrl = [
 			//这里后续需要对参数进行判断处理
 			//....
 
-			$http.get("http://localhost:8080/NCRE/file/indexByType?page="+ downPageId + "&type=office" ).success(function(data){
+			$http.get("http://localhost:8080/NCRE/file/indexByType?page="+ downPageId + "&type=1" ).success(function(data){
 				$scope.action = "doc/";
 				$scope.pageSize = data.pageSize;
 				$scope.pageNumber = data.pageNumber;
@@ -134,12 +140,79 @@ var DownloadsSoftwareCtrl = [
 			//这里后续需要对参数进行判断处理
 			//....
 
-			$http.get("http://localhost:8080/NCRE/file/indexByType?page="+ downPageId + "&type=access" ).success(function(data){
+			$http.get("http://localhost:8080/NCRE/file/indexByType?page="+ downPageId + "&type=2" ).success(function(data){
 				$scope.action = "software/";
 				$scope.pageSize = data.pageSize;
 				$scope.pageNumber = data.pageNumber;
 				$scope.totalPage = data.totalPage;
 				$scope.files = data.list;
+				//console.log($scope.files);
+			});
+		
+		}
+];
+
+//获取每日一练试题
+var TestCtrl = [
+		'$scope',
+		'$routeParams',
+		'$http',
+		function($scope,$routeParams,$http){
+			var testType = $routeParams.testType;
+			//var downType = $routeParams.downType;
+			//这里后续需要对参数进行判断处理
+			//....
+
+			$http.get("http://localhost:8080/NCRE/items/testList?subject-type="+ testType ).success(function(data){
+				
+				
+				$scope.xzt = data[0];
+				$scope.tkt = data[1];
+				//console.log($scope.files);
+			});
+		
+		}
+];
+
+//获取在线试题
+var ExamCtrl = [
+		'$scope',
+		'$routeParams',
+		'$http',
+		function($scope,$routeParams,$http){
+			var examType = $routeParams.examType;
+			//var downType = $routeParams.downType;
+			//这里后续需要对参数进行判断处理
+			//....
+
+			$http.get("http://localhost:8080/NCRE/items/examList?subject-type="+ examType ).success(function(data){
+				
+				$scope.subjectType = examType;
+				$scope.xztList = data[0];
+				$scope.tktList = data[1];
+				$scope.bTkt = data[2];
+				//console.log($scope.files);
+			});
+		
+		}
+];
+
+var RefreshExamCtrl = [
+		'$scope',
+		'$routeParams',
+		'$http',
+		function($scope,$routeParams,$http){
+			var examType = $routeParams.examType;
+			//var downType = $routeParams.downType;
+			//这里后续需要对参数进行判断处理
+			//....
+
+			$http.get("http://localhost:8080/NCRE/items/RefreshExamList?subject-type="+ examType ).success(function(data){
+				
+				$scope.subjectType = examType;
+				$scope.xztList = data[0];
+				$scope.tktList = data[1];
+				$scope.bTkt = data[2];
 				//console.log($scope.files);
 			});
 		

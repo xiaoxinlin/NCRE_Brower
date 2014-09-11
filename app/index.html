@@ -53,6 +53,7 @@
 				 	});
 				  });
 			</script>
+
 		</head>
 
 		<body ng-controller="AnnoListCtrl">
@@ -102,7 +103,7 @@
 							<div class="gundong">
 								<marquee direction="left" scrollamount="5" loop="-1"
 									onMouseOut=this.start(); onMouseOver=this.stop();>
-									<a href="announcement-details.jsp?{{annos[0].id}}"><span
+									<a href="#/announcement/{{annos[0].id}}"><span
 										class="label label-warning" id="blink">新</span>{{annos[0].title}}</a>
 								</marquee>
 							</div>
@@ -119,10 +120,10 @@
 						<a href="#/announcements/1">公告信息</a>
 					</li>
 					<li>
-						<a href="#/test/1">每日一练</a>
+						<a href="#/test/0">每日一练</a>
 					</li>
 					<li>
-						<a href="#/exam/1">在线测试</a>
+						<a href="#/exam/0">在线测试</a>
 					</li>
 					<li>
 						<a href="#/downloads/1">资料下载</a>

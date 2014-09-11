@@ -29,6 +29,7 @@
 															<div class="span12">
 																<ul class="pager" id="pager">
 																  <li><a href="#/downloads/{{action}}{{pageNumber-1}}" >上一页</a></li>
+																  <li>　第&nbsp{{pageNumber }}&nbsp页　 /　 共&nbsp{{totalPage }}&nbsp页　 </li>
 																  <li><a href="#/downloads/{{action}}{{pageNumber+1}}" >下一页</a></li>
 																</ul>
 																<div class="hidden" id ="totalPage">{{totalPage}}</div>	
@@ -80,7 +81,7 @@
 										
 										<tr ng-repeat="anno in annos">
 											<td>
-												<a href="#?{{anno.id}}"><span>{{anno.title}}</span>
+												<a href="#/announcement/{{anno.id}}"><span>{{anno.title}}</span>
 												</a>
 											</td>
 											<td>
@@ -264,32 +265,6 @@
 				</div>
 			</div>
 			</section>
-			<script >
-				
-				$("ul#pager>li>a").click(function(e) {  
-			    	
-			    	var flag = true;
-			    	var totalPage = $("#totalPage").text();
-			     	if( $(this).attr("href").match("\\d*$") == 0 ){
-						alert("当前页已经是第一页！！");
-						flag = false;
-					}
-					if($(this).attr("href").match("\\d*$")-1 == totalPage){
-						alert("当前页已经是最后一页！！");
-						flag = false;
-					}
-					if(!flag){
-						//阻止默认的超链接动作  
-				        if ( e && e.preventDefault ){  
-				            e.preventDefault();  
-				        }else{  
-				            window.event.returnValue = false;  
-				        }  
-				       
-					}
-			        return flag;
-			    
-				} ); 
-			</script>
+			<script src="../app/js/CommonMethods.js"></script>
 	                    
 	                  

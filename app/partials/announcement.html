@@ -18,71 +18,22 @@
 	                                	<div class="anno-block block-light">
 		                                	<div id="anno-text">
 		                                   		<table class="table table-hover">
-		                                    	    <tr>
-											           <td><a href="announcement-details.jsp" >全国计算机等级考试要点、考纲、成绩说明、证书领取、考试范围、考试资料</a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
+		                                    	    <tr ng-repeat="anno in announcements">
+											           <td><a href="#/announcement/{{anno.id}}" >{{anno.title}}</a></td>
+											           <td><span name="anno-time">[{{anno.create_date}}]</span></td>
 											        </tr>
-											        <tr>
-											           <td><a href="#/announcement/:1" >凝心聚智 激发活力 建设中国一流民办大学 ——我院2014年工作研讨会举行 </a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
-											        </tr>
-											        <tr>
-											           <td><a href="#" >思政通识教育部思政改革动向报告顺利举行</a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
-											        </tr>
-											        <tr>
-											           <td><a href="#" >新的公告公告新的公告公告新的公告公告新的公告公告</a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
-											        </tr>
-											        <tr>
-											           <td><a href="#" >梦启航、路漫漫、情相牵——我院2014届毕业生离校工作圆满完成</a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
-											        </tr>
-											        <tr>
-											           <td><a href="#" >新的公告公告新的公告公告新的公告公告新的公告公告</a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
-											        </tr>
-											        <tr>
-											           <td><a href="#" >我院隆重举行2014年学士学位授予仪式</a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
-											        </tr>
-											        <tr>
-											           <td><a href="#" >新的公告公告新的公告公告新的公告公告新的公告公告</a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
-											        </tr>
-											        <tr>
-											           <td><a href="#" >新的公告公告新的公告公告新的公告公告新的公告公告</a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
-											        </tr>
-											        <tr>
-											           <td><a href="#" >新的公告公告新的公告公告新的公告公告新的公告公告</a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
-											        </tr>
-											        <tr>
-											           <td><a href="#" >毕业至 离歌响—2014年毕业晚会之“思忆南方”完美谢幕</a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
-											        </tr>
-											        <tr>
-											           <td><a href="#" >理想、愿景与奋斗目标相统一的中国梦——中山大学詹小美教授举办群众路线专题讲座</a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
-											        </tr>
-											        <tr>
-											           <td><a href="#" >新的公告公告新的公告公告新的公告公告新的公告公告</a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
-											        </tr>
-											        <tr>
-											           <td><a href="#" >理想、愿景与奋斗目标相统一的中国梦——中山大学詹小美教授举办群众路线专题讲座</a></td>
-											           <td><span name="anno-time">[2014-08-01]</span></td>
-											        </tr>
+											        
 			                                    </table>
 			                                    <div class="anno-page">
 													<div class="container-fluid">
 														<div class="row-fluid">
 															<div class="span12">
-																<ul class="pager">
-																  <li><a href="#">上一页</a></li>
-																  <li><a href="#">下一页</a></li>
+																<ul class="pager" id="pager">
+																  <li><a href="#/announcements/{{pageNumber-1}}">上一页</a></li>
+																  <li>　第&nbsp{{pageNumber }}&nbsp页　 /　 共&nbsp{{totalPage }}&nbsp页　 </li>
+																  <li><a href="#/announcements/{{pageNumber+1}}">下一页</a></li>
 																</ul>	
+																<div class="hidden" id ="totalPage">{{totalPage}}</div>	
 															</div>
 														</div>
 													</div>
@@ -128,37 +79,10 @@
 								<div class="tab-pane  active" id="anno">
 									<section class="anno-tab">
 									<table class="table table-hover">
-										<!--   	    <tr>
-										           <td><a href="announcement-details.jsp"><div class="anno-ellipsis"><span class="label label-warning" id="blink">新</span>新的公告公告新的公告公告</div></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><div class="anno-ellipsis"><span class="label label-warning" id="blink">新</span>新的公告公告新的公告公告</div></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><div class="anno-ellipsis"><span class="label label-warning" id="blink">新</span>新的公告公告新的公告公告新的公告公告新的公告公告</div></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><div class="anno-ellipsis">新的公告公告新的公告公告新的公告公告新的公告公告</div></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><span>新的公告公告新的公告公告</span></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><span>新的公告公告新的公告公告</span></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><span>新的公告公告新的公告公告</span></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr> -->
+										
 										<tr ng-repeat="anno in annos">
 											<td>
-												<a href="#?{{anno.id}}"><span>{{anno.title}}</span>
+												<a href="#/announcement/{{anno.id}}"><span>{{anno.title}}</span>
 												</a>
 											</td>
 											<td>
@@ -342,4 +266,6 @@
 				</div>
 			</div>
 			</section>
+	<script src="../app/js/CommonMethods.js"></script>
+			
 	                 

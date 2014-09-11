@@ -18,29 +18,21 @@
 	                                	<div class="question-block block-light">
 		                                	<div id="anno-text">
 		                                		<ul>
-		                                			<li><a href="#/question/:1">今年上半年计算机国家二级考试成绩什么时候出来？</a></li>
-		                                			<li><a href="">全国计算机等级考试(二级)考什么内容?？</a></li>
-		                                			<li><a href="">全国计算机等级考试成绩查询短信怎么查？</a></li>
-		                                			<li><a href="">全国计算机等级考试二级考哪个种类好啊？</a></li>
-		                                			<li><a href="">全国计算机等级考试一、二级考哪些科目,一级的难度如何?</a></li>
-		                                			<li><a href="">2013年3月全国计算机等级考试成绩出来没？</a></li>
-		                                			<li><a href="">什么时候考试啊？</a></li>
-		                                			<li><a href="">全国计算机等级考试(二级)考什么内容?？</a></li>
-		                                			<li><a href="">全国计算机等级考试成绩查询短信怎么查？</a></li>
-		                                			<li><a href="">全国计算机等级考试二级考哪个种类好啊？</a></li>
-		                                			<li><a href="">全国计算机等级考试一、二级考哪些科目,一级的难度如何?</a></li>
-		                                			<li><a href="">2013年3月全国计算机等级考试成绩出来没？</a></li>
-		                                			<li><a href="">什么时候考试啊？</a></li>
-		                                			<li><a href="">全国计算机等级考试(二级)考什么内容?？</a></li>
+		                                			<li ng-repeat="question in questions">
+		                                				<a href="#/question/{{question.id}}">{{question.title}}</a>
+		                                			</li>
+		                                			
 		                                		</ul>
 		                                   		<div class="question-page">
 													<div class="container-fluid">
 														<div class="row-fluid">
 															<div class="span12">
-																<ul class="pager">
-																  <li><a href="#">上一页</a></li>
-																  <li><a href="#">下一页</a></li>
+																<ul class="pager" id="pager">
+																  <li><a href="#/questions/{{pageNumber-1}}">上一页</a></li>
+																  <li>　第&nbsp{{pageNumber }}&nbsp页　 /　 共&nbsp{{totalPage }}&nbsp页　 </li>
+																  <li><a href="#/questions/{{pageNumber+1}}">下一页</a></li>
 																</ul>	
+																<div class="hidden" id ="totalPage">{{totalPage}}</div>	
 															</div>
 														</div>
 													</div>
@@ -86,37 +78,10 @@
 								<div class="tab-pane  active" id="anno">
 									<section class="anno-tab">
 									<table class="table table-hover">
-										<!--   	    <tr>
-										           <td><a href="announcement-details.jsp"><div class="anno-ellipsis"><span class="label label-warning" id="blink">新</span>新的公告公告新的公告公告</div></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><div class="anno-ellipsis"><span class="label label-warning" id="blink">新</span>新的公告公告新的公告公告</div></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><div class="anno-ellipsis"><span class="label label-warning" id="blink">新</span>新的公告公告新的公告公告新的公告公告新的公告公告</div></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><div class="anno-ellipsis">新的公告公告新的公告公告新的公告公告新的公告公告</div></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><span>新的公告公告新的公告公告</span></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><span>新的公告公告新的公告公告</span></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><span>新的公告公告新的公告公告</span></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr> -->
+										
 										<tr ng-repeat="anno in annos">
 											<td>
-												<a href="#?{{anno.id}}"><span>{{anno.title}}</span>
+												<a href="#/announcement/{{anno.id}}"><span>{{anno.title}}</span>
 												</a>
 											</td>
 											<td>
@@ -300,5 +265,5 @@
 				</div>
 			</div>
 			</section>
-	                    
+	        <script src="../app/js/CommonMethods.js"></script>
 	                

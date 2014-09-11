@@ -85,37 +85,10 @@
 								<div class="tab-pane  active" id="anno">
 									<section class="anno-tab">
 									<table class="table table-hover">
-										<!--   	    <tr>
-										           <td><a href="announcement-details.jsp"><div class="anno-ellipsis"><span class="label label-warning" id="blink">新</span>新的公告公告新的公告公告</div></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><div class="anno-ellipsis"><span class="label label-warning" id="blink">新</span>新的公告公告新的公告公告</div></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><div class="anno-ellipsis"><span class="label label-warning" id="blink">新</span>新的公告公告新的公告公告新的公告公告新的公告公告</div></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><div class="anno-ellipsis">新的公告公告新的公告公告新的公告公告新的公告公告</div></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><span>新的公告公告新的公告公告</span></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><span>新的公告公告新的公告公告</span></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr>
-										        <tr>
-										           <td><a href="#"><span>新的公告公告新的公告公告</span></a></td>
-										           <td><span name="anno-time">[2014-08-01]</span></td>
-										        </tr> -->
+										
 										<tr ng-repeat="anno in annos">
 											<td>
-												<a href="#?{{anno.id}}"><span>{{anno.title}}</span>
+												<a href="#/announcement/{{anno.id}}"><span>{{anno.title}}</span>
 												</a>
 											</td>
 											<td>
