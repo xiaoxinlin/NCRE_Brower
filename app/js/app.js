@@ -14,6 +14,6 @@ angular.module('myApp', []).
     $routeProvider.when('/downloads/software/:downPageId', {templateUrl: 'partials/download.html', controller: DownloadsSoftwareCtrl});
     $routeProvider.when('/test/:testType', {templateUrl: 'partials/test.html', controller: TestCtrl});
     $routeProvider.when('/exam/:examType', {templateUrl: 'partials/exam.html', controller: ExamCtrl});
-    $routeProvider.when('/exam/refresh/:examType', {templateUrl: 'partials/exam.html', controller: RefreshExamCtrl});
+    $routeProvider.when('/exam/refresh/:examType/:random', {templateUrl: 'partials/exam.html', controller: RefreshExamCtrl});
     $routeProvider.otherwise({redirectTo: '/index/'});
   }]);

@@ -191,6 +191,7 @@ var ExamCtrl = [
 				$scope.xztList = data[0];
 				$scope.tktList = data[1];
 				$scope.bTkt = data[2];
+				$scope.random = Math.random();
 				//console.log($scope.files);
 			});
 		
@@ -213,6 +214,7 @@ var RefreshExamCtrl = [
 				$scope.xztList = data[0];
 				$scope.tktList = data[1];
 				$scope.bTkt = data[2];
+				$scope.random = Math.random();
 				//console.log($scope.files);
 			});
 		

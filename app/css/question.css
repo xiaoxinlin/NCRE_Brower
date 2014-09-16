@@ -21,6 +21,9 @@
 .question-shadow .question-block li {
 	border:0px;
 	line-height:35px;
+	
+}
+.question-shadow .question-block .question-list li {
 	border-bottom:1px solid #e0e0e0;
 }
 

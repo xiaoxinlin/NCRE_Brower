@@ -16,14 +16,16 @@
 	                            <article class="blog-post span8">
 	                                <div class="block-grey question-shadow">
 	                                	<div class="question-block block-light">
-		                                	<div id="anno-text">
+		                                	<div id="anno-text" class="question-list">
 		                                		<ul>
 		                                			<li ng-repeat="question in questions">
 		                                				<a href="#/question/{{question.id}}">{{question.title}}</a>
 		                                			</li>
 		                                			
 		                                		</ul>
-		                                   		<div class="question-page">
+		                                   		
+											</div>
+											<div class="question-page">
 													<div class="container-fluid">
 														<div class="row-fluid">
 															<div class="span12">
@@ -37,11 +39,11 @@
 														</div>
 													</div>
 												</div>
-											</div>
-											
 		                                 </div>
 	                                </div>
+
 	                            </article>
+	                            
 	                         </div>
 	                    </section>
 
@@ -49,14 +51,16 @@
 							<aside id="sidebar" class="alignright span4">
 							<!-- Search -->
 							<section class="search clearfix">
-							<form id="search" class="input-append" />
+							<!-- <form id="search" class="input-append" />
 								<input class="" id="appendedInputButton" size="16" type="text"
 									value="Search..." name="search site"
 									onfocus="if(this.value=='Search...') this.value=''"
 									onblur="if(this.value=='') this.value='Search...'" />
 								<input class="btn search-bt" type="submit" name="submit"
 									value="" />
-							</form>
+							</form> -->
+							
+							<p>&nbsp</p>
 							</section>
 							<!-- Tabs -->
 							<section class="block-grey">

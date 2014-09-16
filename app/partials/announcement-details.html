@@ -21,7 +21,7 @@
 	                                <div class="anno-de-shadow">
 	                                	<div class="anno-de-block">
 	                                   		<div class="anno-de-title"><h3>{{announcement.title}}</h3></div>
-	                                   		<div class="anno-de-text">
+	                                   		<div class="anno-de-text hidden" id="context">
 	                                   			{{announcement.context}}
 											</div>
 											<div class="anno-de-appendix ">
@@ -37,15 +37,18 @@
 							<aside id="sidebar" class="alignright span4">
 							<!-- Search -->
 							<section class="search clearfix">
-							<form id="search" class="input-append" />
+							<!-- <form id="search" class="input-append" />
 								<input class="" id="appendedInputButton" size="16" type="text"
 									value="Search..." name="search site"
 									onfocus="if(this.value=='Search...') this.value=''"
 									onblur="if(this.value=='') this.value='Search...'" />
 								<input class="btn search-bt" type="submit" name="submit"
 									value="" />
-							</form>
+							</form> -->
+							
+							<p>&nbsp</p>
 							</section>
+							
 							<!-- Tabs -->
 							<section class="block-grey">
 							<!-- Tabs navigation -->
@@ -253,3 +256,10 @@
 				</div>
 			</div>
 			</section>
+			<script >
+				$(document).ready(function(){
+					setTimeout( "$('#context').html(  $('#context').text().trim() );$('#context').removeClass('hidden');",500 );
+					
+				});
+
+			</script>

@@ -131,33 +131,33 @@
 	                       		 	<p><h4>一、单项选择题：</h4></p>
 	                       		 	<div id="exam-xzt" ng-repeat="xzt in xztList">
 	                       		 		
-			                            <p>{{$index+1}}、<span name="exam-xzt-title" id="exam-xzt-title">{{xzt.title}}</span></p>
-			                            <p><input type="radio" name="option" value="A"/>A 、<span name="optionA-title" id="optionA-title">{{xzt.option1}}</span></p>
-				                        <p><input type="radio" name="option" value="B"/>B、 <span name="optionB-title" id="optionB-title">{{xzt.option2}} </span></p>                    
-				                        <p><input type="radio" name="option" value="C"/>C、 <span name="optionC-title" id="optionC-title">{{xzt.option3}}</span></p> 
-				                        <p><input type="radio" name="option" value="D"/>D、 <span name="optionD-title" id="optionD-title">{{xzt.option4}}</span></p>
-				                        <div class="hidden" id="answer"><p  style="background:#92DD96;"><b>正确答案：{{xzt.answer}}</b></p></div>
+			                            <p>{{$index+1}}、<span name="exam-xzt-title" id="exam-xzt-title" class="context hidden">{{xzt.title}}</span></p>
+			                            <p><input type="radio" name="option" value="A"/>A 、<span name="optionA-title" id="optionA-title" class="context hidden">{{xzt.option1}}</span></p>
+				                        <p><input type="radio" name="option" value="B"/>B、 <span name="optionB-title" id="optionB-title" class="context hidden">{{xzt.option2}} </span></p>                    
+				                        <p><input type="radio" name="option" value="C"/>C、 <span name="optionC-title" id="optionC-title" class="context hidden">{{xzt.option3}}</span></p> 
+				                        <p><input type="radio" name="option" value="D"/>D、 <span name="optionD-title" id="optionD-title" class="context hidden">{{xzt.option4}}</span></p>
+				                        <div class="hidden" id="answer"><p  style="background:#92DD96;" ><b class="context hidden">正确答案：{{xzt.answer}}</b></p></div>
 		                            </div>
 		                            <p><h4>二、填空题：</h4></p>
 		                            <div id="exam-tkt" ng-repeat="tkt in tktList">
 		                            	
-			                            <p>{{$index+1}}、<span name="exam-tkt-title" id="exam-tkt-title">{{tkt.title}}</span>
-										</p>
+			                            <span name="exam-tkt-title" id="exam-tkt-title" class="context hidden" >　{{tkt.title}}</span>
+										
 										<p>答案：<input type="text" class="span7" name="answer1" value=""/></p>
-										<div class="hidden" id="answer"><p  style="background:#92DD96;"><b>正确答案：{{tkt.answer}}</b></p></div>
+										<div class="hidden" id="answer"><p  style="background:#92DD96;" ><b class="context hidden">正确答案：{{tkt.answer}}</b></p></div>
 		                            </div>
 		                            <p><h4>三、大题：</h4></p>
 		                            <div id="exam-dt">
-			                            <p>1、
-			                            	<span name="exam-dt-title" id="exam-dt-title">{{bTkt.title}}</span>
+			                            <p>
+			                            	<span name="exam-dt-title" id="exam-dt-title" class="context hidden">{{bTkt.title}}</span>
 										</p>
 										<p>
 											答案：<textarea rows="10" name="exam-dt-answer" id="exam-dt-answer" class="span7"></textarea>
 										</p>
-										<div class="hidden" id="answer"><p  style="background:#92DD96;"><b>正确答案：{{bTkt.answer}}</b></p></div>
+										<div class="hidden" id="answer"><p  style="background:#92DD96;"><b class="context hidden">正确答案：{{bTkt.answer}}</b></p></div>
 		                            </div>
 		                            <button type="button" class="btn btn-large" id="exam-submit">查看答案</button>
-		                            <a href="#/exam/refresh/{{subjectType}}" class="btn btn-large" id="exam-change">换一套题</a>
+		                            <a href="#/exam/refresh/{{subjectType}}/{{random}}" class="btn btn-large" id="exam-change">换一套题</a>
 		                         </div>
 	                        </section>
 	                    </aside> 
@@ -169,6 +169,9 @@
 	</section>
 	<script >
 		$(document).ready(function(){
+
+			setTimeout("$('.context').each(function(){$(this).html(  $(this).text().trim() );$(this).removeClass('hidden');});",800);
+			//setTimeout( "$('.context').html(  $('.context').text().trim() );$('.context').removeClass('hidden');",500 );
 			$("#exam-submit").toggle(function(){
 				$("div#answer").removeClass("hidden");
 				$(this).text("隐藏答案");
