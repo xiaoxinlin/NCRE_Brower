@@ -20,8 +20,19 @@
 	                            <article class="blog-post span8">
 	                                <div class="question-de-shadow">
 	                                	<div class="question-de-block">
-	                                   		<div class="question-de-title"><h3>{{question.title}}</h3></div>
-	                                   		<div class="question-de-text">
+	                                   		<div class="question-de-title">
+	                                   			<h3>{{question.title}}</h3>
+	                                   			<hr style="border:1px solid #F2F2F2;">
+	                                   			<div style="float:right;">
+													<h5>
+														附件下载：
+														<i>
+															<a href="http://localhost:8080/NCRE/file/download?id={{announcement.file_id}}">{{question.uri}}</a>　　
+														</i>
+													</h5>
+												</div>
+	                                   		</div>
+	                                   		<div class="row question-de-text" id="context" style="margin:30px 30px">
 	                                   			<p>{{question.answer}}</p>
 											</div>
 		                                </div>
@@ -252,5 +263,11 @@
 				</div>
 			</div>
 			</section>
-			
+			<script >
+				$(document).ready(function(){
+					setTimeout( "$('#context').html(  $('#context').text().trim() );$('#context').removeClass('hidden');",500 );
+					
+				});
+
+			</script>
 	                  

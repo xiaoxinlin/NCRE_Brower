@@ -20,13 +20,19 @@
 	                            <article class="blog-post span8">
 	                                <div class="anno-de-shadow">
 	                                	<div class="anno-de-block">
-	                                   		<div class="anno-de-title"><h3>{{announcement.title}}</h3></div>
-	                                   		<div class="anno-de-text hidden" id="context">
+	                                   		<div class="anno-de-title">
+	                                   			<h3>{{announcement.title}}</h3>
+	                                   			<hr style="border:1px solid #F2F2F2;">
+	                                   			<h5>创建时间：<i>{{announcement.create_date}}</i>　　　
+	                                   				附件：<i><a href="http://localhost:8080/NCRE/file/download?id={{announcement.file_id}}">{{announcement.uri}}</a></i>
+	                                   			</h5>
+	                                   		</div>
+	                                   		<div class="anno-de-text hidden" id="context" style="margin:0px 30px">
 	                                   			{{announcement.context}}
 											</div>
-											<div class="anno-de-appendix ">
+											<!-- <div class="anno-de-appendix ">
 												<div class="row"><a href="http://localhost:8080/NCRE/file/download?id={{announcement.file_id}}">{{announcement.uri}}</a></div>
-											</div>
+											</div> -->
 		                                    
 		                                </div>
 	                                </div>
