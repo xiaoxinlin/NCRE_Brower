@@ -12,6 +12,7 @@ angular.module('myApp', []).
     $routeProvider.when('/downloads/:downPageId', {templateUrl: 'partials/download.html', controller: DownloadsCtrl});
     $routeProvider.when('/downloads/doc/:downPageId', {templateUrl: 'partials/download.html', controller: DownloadsDocCtrl});
     $routeProvider.when('/downloads/software/:downPageId', {templateUrl: 'partials/download.html', controller: DownloadsSoftwareCtrl});
+    $routeProvider.when('/download/:downId', {templateUrl: 'partials/download-details.html', controller: DownloadDetailCtrl});
     $routeProvider.when('/test/:testType', {templateUrl: 'partials/test.html', controller: TestCtrl});
     $routeProvider.when('/exam/:examType', {templateUrl: 'partials/exam.html', controller: ExamCtrl});
     $routeProvider.when('/exam/refresh/:examType/:random', {templateUrl: 'partials/exam.html', controller: RefreshExamCtrl});

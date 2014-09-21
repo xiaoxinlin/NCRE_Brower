@@ -152,6 +152,21 @@ var DownloadsSoftwareCtrl = [
 		}
 ];
 
+//获取一个公告实例
+var  DownloadDetailCtrl = [
+		'$scope',
+		'$routeParams',
+		'$http',
+		function($scope,$routeParams,$http){
+			var downId = $routeParams.downId;
+			//这里后续需要对参数进行判断处理
+			//....
+			$http.get("http://localhost:8080/NCRE/file/show?id="+ downId ).success(function(data){
+				$scope.file = data;
+			});
+		}
+];
+
 //获取每日一练试题
 var TestCtrl = [
 		'$scope',
