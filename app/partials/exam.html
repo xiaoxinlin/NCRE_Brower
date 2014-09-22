@@ -129,7 +129,7 @@
 	                        <section class="exam-block clearfix">
 	                       		 <div class="exam-block-br">
 	                       		 	<p><h4>一、单项选择题：</h4></p>
-	                       		 	<div id="exam-xzt" ng-repeat="xzt in xztList">
+	                       		 	<div id="exam-xzt" ng-repeat="xzt in xzts">
 	                       		 		
 			                            <p>{{$index+1}}、<span name="exam-xzt-title" id="exam-xzt-title" class="context hidden">{{xzt.title}}</span></p>
 			                            <p><input type="radio" name="option" value="A"/>A 、<span name="optionA-title" id="optionA-title" class="context hidden">{{xzt.option1}}</span></p>
@@ -139,7 +139,7 @@
 				                        <div class="hidden" id="answer"><p  style="background:#92DD96;" ><b class="context hidden">正确答案：{{xzt.answer}}</b></p></div>
 		                            </div>
 		                            <p><h4>二、填空题：</h4></p>
-		                            <div id="exam-tkt" ng-repeat="tkt in tktList">
+		                            <div id="exam-tkt" ng-repeat="tkt in tkts">
 		                            	
 			                            <span name="exam-tkt-title" id="exam-tkt-title" class="context hidden" >　{{tkt.title}}</span>
 										
@@ -147,14 +147,14 @@
 										<div class="hidden" id="answer"><p  style="background:#92DD96;" ><b class="context hidden">正确答案：{{tkt.answer}}</b></p></div>
 		                            </div>
 		                            <p><h4>三、大题：</h4></p>
-		                            <div id="exam-dt">
+		                            <div id="exam-dt" ng-repeat="bt in bts">
 			                            <p>
-			                            	<span name="exam-dt-title" id="exam-dt-title" class="context hidden">{{bTkt.title}}</span>
+			                            	<span name="exam-dt-title" id="exam-dt-title" class="context hidden">{{bt.title}}</span>
 										</p>
 										<p>
 											答案：<textarea rows="10" name="exam-dt-answer" id="exam-dt-answer" class="span7"></textarea>
 										</p>
-										<div class="hidden" id="answer"><p  style="background:#92DD96;"><b class="context hidden">正确答案：{{bTkt.answer}}</b></p></div>
+										<div class="hidden" id="answer"><p  style="background:#92DD96;"><b class="context hidden">正确答案：{{bt.answer}}</b></p></div>
 		                            </div>
 		                            <button type="button" class="btn btn-large" id="exam-submit">查看答案</button>
 		                            <a href="#/exam/refresh/{{subjectType}}/{{random}}" class="btn btn-large" id="exam-change">换一套题</a>

@@ -181,8 +181,8 @@ var TestCtrl = [
 			$http.get("http://localhost:8080/NCRE/items/testList?subject-type="+ testType ).success(function(data){
 				
 				
-				$scope.xzt = data[0];
-				$scope.tkt = data[1];
+				$scope.xzts = data[0];
+				$scope.tkts = data[1];
 				//console.log($scope.files);
 			});
 		
@@ -203,9 +203,9 @@ var ExamCtrl = [
 			$http.get("http://localhost:8080/NCRE/items/examList?subject-type="+ examType ).success(function(data){
 				
 				$scope.subjectType = examType;
-				$scope.xztList = data[0];
-				$scope.tktList = data[1];
-				$scope.bTkt = data[2];
+				$scope.xzts = data[0];
+				$scope.tkts = data[1];
+				$scope.bts = data[2];
 				$scope.random = Math.random();
 				//console.log($scope.files);
 			});
@@ -226,9 +226,9 @@ var RefreshExamCtrl = [
 			$http.get("http://localhost:8080/NCRE/items/RefreshExamList?subject-type="+ examType ).success(function(data){
 				
 				$scope.subjectType = examType;
-				$scope.xztList = data[0];
-				$scope.tktList = data[1];
-				$scope.bTkt = data[2];
+				$scope.xzts = data[0];
+				$scope.tkts = data[1];
+				$scope.bts = data[2];
 				$scope.random = Math.random();
 				//console.log($scope.files);
 			});
