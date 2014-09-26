@@ -131,21 +131,29 @@
 			      
 				                        <h4>选择题：</h4>
 				                        <div ng-repeat="xzt in xzts">
-					                        <p><span name="test-xzt-title" id="test-xzt-title" class="context hidden">{{xzt.title}}</span></p>
-				                            <p><input type="radio" name="option" value="A"/>A 、<span name="optionA-title" id="optionA-title">{{xzt.option1}}</span></p>
-					                        <p><input type="radio" name="option" value="B"/>B 、<span name="optionB-title" id="optionB-title">{{xzt.option2}} </span></p>                    
-					                        <p><input type="radio" name="option" value="C"/>C 、<span name="optionC-title" id="optionC-title">{{xzt.option3}}</span></p> 
-					                        <p><input type="radio" name="option" value="D"/>D、 <span name="optionD-title" id="optionD-title">{{xzt.option4}}</span></p>
-					                        <div class="hidden" id="answer"><p  style="background:#92DD96;"><b>答案 ：{{xzt.answer}}</b></p></div>
+					                       <div style="margin:10px 10px;">
+			                            	<div style="margin:10px 0px;">
+				                            <b>{{$index+1 }}、</b><span name="exam-xzt-title" id="exam-xzt-title" class="context hidden">{{xzt.title}}</span>
+				                            </div>
+				                            <p><input type="radio" name="option" value="A"/>A 、<span name="optionA-title" id="optionA-title" class="context hidden">{{xzt.option1}}</span></p>
+					                        <p><input type="radio" name="option" value="B"/>B、 <span name="optionB-title" id="optionB-title" class="context hidden">{{xzt.option2}} </span></p>                    
+					                        <p><input type="radio" name="option" value="C"/>C、 <span name="optionC-title" id="optionC-title" class="context hidden">{{xzt.option3}}</span></p> 
+					                        <p><input type="radio" name="option" value="D"/>D、 <span name="optionD-title" id="optionD-title" class="context hidden">{{xzt.option4}}</span></p>
+					                        <div class="hidden" id="answer"><p  style="background:#92DD96;" ><b class="context hidden">正确答案：{{xzt.answer}}</b></p></div>
+					                        </div>
 				                    	</div>
 		                            </div>
 		                            <div id="test-tkt">
 										
 										<h4>填空题：</h4>
 										<div  ng-repeat="tkt in tkts">
-										<p><span name="test-tkt-title" id="tkt" class="context hidden">{{tkt.title}}</span></p>
-										<p>答案：<input type="text" class="span7" name="answer1" value=""/></p>
-										<div class="hidden " id="answer"><p style="background:#92DD96;" ><b class="context hidden">答案 ：{{tkt.answer}}</b></p></div>
+											<div style="margin:10px 10px;">
+			                            	<div style="margin:10px 0px;">
+				                            <b>{{$index+1 }}、</b><span name="exam-tkt-title" id="exam-tkt-title" class="context hidden" >　{{tkt.title}}</span>
+											</div>
+											<p>答案：<input type="text" class="span7" name="answer1" value=""/></p>
+											<div class="hidden" id="answer"><p  style="background:#92DD96;" ><b class="context hidden">正确答案：{{tkt.answer}}</b></p></div>
+											</div>
 										</div>
 		                            </div>
 		                            <button type="button" class="btn btn-large" id="test-submit">查看答案</button>

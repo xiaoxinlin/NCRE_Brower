@@ -28,14 +28,25 @@
 											<div class="question-page">
 													<div class="container-fluid">
 														<div class="row-fluid">
-															<div class="span12">
+															<!-- <div class="span12">
 																<ul class="pager" id="pager">
 																  <li><a href="#/questions/{{pageNumber-1}}">上一页</a></li>
 																  <li>　第&nbsp{{pageNumber }}&nbsp页　 /　 共&nbsp{{totalPage }}&nbsp页　 </li>
 																  <li><a href="#/questions/{{pageNumber+1}}">下一页</a></li>
 																</ul>	
 																<div class="hidden" id ="totalPage">{{totalPage}}</div>	
+															</div> -->
+															<input id="address" value="#/announcements/" class="hidden">
+															<input id="pageNum" value="{{pageNumber }}" class="hidden">
+															<input id="pageTotal" value="{{totalPage }}" class="hidden">
+															<center>
+															<div class="pagination" style="margin-top:20px;">
+															  <ul id="pager">
+															  
+															  </ul>
+															 <div style="color:#83a400;">第&nbsp{{pageNumber }}&nbsp页　 /　 共&nbsp{{totalPage }}&nbsp页</div>
 															</div>
+															</center>
 														</div>
 													</div>
 												</div>
@@ -269,5 +280,12 @@
 				</div>
 			</div>
 			</section>
-	        <script src="../app/js/CommonMethods.js"></script>
+			<script >
+			$(function(){
+				
+				var str = 'var pageNow = $("#pageNum").val();var pageTotal = $("#pageTotal").val();var address=$("#address").val();page(address,pageNow,pageTotal)';
+				setTimeout(str,500);
+			});
+			</script>
+	       
 	                
